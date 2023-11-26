@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+}
+
+.carousel{
+    align-items:  center;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: rotate 18s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    from{
+        transform: perspective(750px) rotate(0deg);
+    }
+    to{
+        transform: perspective(750px) rotatey(300deg);
+    }
+}
+
+.carousel span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 72deg)) translateZ(320px);
+}
+
+.carousel span img{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    overflow: cover;
+}
